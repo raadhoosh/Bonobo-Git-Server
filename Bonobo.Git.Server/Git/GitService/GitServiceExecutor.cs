@@ -112,7 +112,7 @@ namespace Bonobo.Git.Server.Git.GitService
 
                     string _data;
                     _data = System.Text.Encoding.Default.GetString(result);
-
+                    new GitResultParser().ParsResult(_data);
                 }
 
                 process.WaitForExit();
