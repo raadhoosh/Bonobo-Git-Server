@@ -7,6 +7,7 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text;
 
 namespace Bonobo.Git.Server.Git.GitService
 {
@@ -94,7 +95,26 @@ namespace Bonobo.Git.Server.Git.GitService
                     process.StandardInput.Write('\0');
                 }
 
-                process.StandardOutput.BaseStream.CopyTo(outStream);
+
+                //process.StandardOutput.BaseStream.CopyTo(outStream);
+
+                using (var stream = new MemoryStream())
+                {
+                    byte[] buffer = new byte[2048]; // read in chunks of 2KB
+                    int bytesRead;
+                    while ((bytesRead = process.StandardOutput.BaseStream.Read(buffer, 0, buffer.Length)) > 0)
+                    {
+                        stream.Write(buffer, 0, bytesRead);
+                    }
+                    byte[] result = stream.ToArray();
+                    // TODO: do something with the result
+                    outStream.Write(result, 0, result.Length);
+
+                    string _data;
+                    _data = System.Text.Encoding.Default.GetString(result);
+
+                }
+
                 process.WaitForExit();
             }
         }
