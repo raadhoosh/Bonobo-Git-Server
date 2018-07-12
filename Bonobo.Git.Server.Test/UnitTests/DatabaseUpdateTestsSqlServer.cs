@@ -230,6 +230,7 @@ namespace Bonobo.Git.Server.Test.UnitTests
                         CREATE TABLE [dbo].[Repository] (
                             [Name] VarChar(255) Not Null,
                             [Description] VarChar(255) Null,
+                            [CommandLinePath] VarChar(255) Null,
                             [Anonymous] Bit Not Null,
                             [AllowAnonymousPush] Integer Default {0} Not Null,
                             [LinksRegex] VarChar(255) Not Null,

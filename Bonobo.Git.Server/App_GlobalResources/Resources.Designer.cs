@@ -1431,6 +1431,15 @@ namespace Bonobo.Git.Server.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CI Command Line Path (.cmd or .bat file).
+        /// </summary>
+        public static string Repository_Detail_CommandLinePath {
+            get {
+                return ResourceManager.GetString("Repository_Detail_CommandLinePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Repository_Detail_Delete {

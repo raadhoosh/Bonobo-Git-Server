@@ -26,6 +26,7 @@ namespace Bonobo.Git.Server.Data
         public string Name { get; set; }
         public string Group { get; set; }
         public string Description { get; set; }
+        public string CommandLinePath { get; set; }
         public bool Anonymous { get; set; }
         public byte[] Logo { get; set; }
         public RepositoryPushMode AllowAnonymousPush { get; set; }

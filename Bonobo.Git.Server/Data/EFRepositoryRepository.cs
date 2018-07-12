@@ -24,6 +24,7 @@ namespace Bonobo.Git.Server.Data
                     Name = repo.Name,
                     Group = repo.Group,
                     Description = repo.Description,
+                    CommandLinePath = repo.CommandLinePath,
                     AnonymousAccess = repo.Anonymous,
                     Users = repo.Users,
                     Teams = repo.Teams,
@@ -39,6 +40,7 @@ namespace Bonobo.Git.Server.Data
                     Name = repo.Name,
                     Group = repo.Group,
                     Description = repo.Description,
+                    CommandLinePath = repo.CommandLinePath,
                     AnonymousAccess = repo.AnonymousAccess,
                     Users = repo.Users.Select(user => user.ToModel()).ToArray(),
                     Teams = repo.Teams.Select(TeamToTeamModel).ToArray(),
@@ -115,6 +117,7 @@ namespace Bonobo.Git.Server.Data
                     Logo = model.Logo,
                     Group = model.Group,
                     Description = model.Description,
+                    CommandLinePath = model.CommandLinePath,
                     Anonymous = model.AnonymousAccess,
                     AllowAnonymousPush = model.AllowAnonymousPush,
                     AuditPushUser = model.AuditPushUser,
@@ -156,6 +159,7 @@ namespace Bonobo.Git.Server.Data
                     repo.Name = model.Name;
                     repo.Group = model.Group;
                     repo.Description = model.Description;
+                    repo.CommandLinePath = model.CommandLinePath;
                     repo.Anonymous = model.AnonymousAccess;
                     repo.AuditPushUser = model.AuditPushUser;
                     repo.AllowAnonymousPush = model.AllowAnonymousPush;
@@ -204,6 +208,7 @@ namespace Bonobo.Git.Server.Data
                 Name = item.Name,
                 Group = item.Group,
                 Description = item.Description,
+                CommandLinePath = item.CommandLinePath,
                 AnonymousAccess = item.Anonymous,
                 Users = item.Users.Select(user => user.ToModel()).ToArray(),
                 Teams = item.Teams.Select(TeamToTeamModel).ToArray(),

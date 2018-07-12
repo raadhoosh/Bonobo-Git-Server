@@ -40,6 +40,7 @@ namespace Bonobo.Git.Server.Data.Update
                         repository = new RepositoryModel();
                         repository.Id = Guid.NewGuid();
                         repository.Description = "Discovered in file system.";
+                        repository.CommandLinePath = "";
                         repository.Name = name;
                         repository.AnonymousAccess = false;
                         repository.Users = new UserModel[0];

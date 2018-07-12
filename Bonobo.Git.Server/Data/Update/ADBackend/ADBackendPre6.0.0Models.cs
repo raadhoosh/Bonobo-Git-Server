@@ -47,6 +47,7 @@ namespace Bonobo.Git.Server.Data.Update.Pre600ADBackend
         public string Name { get; set; }
         public string Group { get; set; }
         public string Description { get; set; }
+        public string CommandLinePath { get; set; }
         public bool AnonymousAccess { get; set; }
         public string[] Users { get; set; }
         public string[] Administrators { get; set; }

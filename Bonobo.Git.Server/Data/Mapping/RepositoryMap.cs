@@ -50,6 +50,7 @@ namespace Bonobo.Git.Server.Data.Mapping
             Property(t => t.Name).HasColumnName("Name");
             Property(t => t.Group).HasColumnName("Group");
             Property(t => t.Description).HasColumnName("Description");
+            Property(t => t.CommandLinePath).HasColumnName("CommandLinePath");
             Property(t => t.Anonymous).HasColumnName("Anonymous");
             Property(t => t.AuditPushUser).HasColumnName("AuditPushUser");
             Property(t => t.AllowAnonymousPush).HasColumnName("AllowAnonymousPush");
@@ -69,6 +70,9 @@ namespace Bonobo.Git.Server.Data.Mapping
 
             Property(t => t.Description)
                 .HasMaxLength(255);
+
+            Property(t => t.CommandLinePath)
+               .HasMaxLength(255);
         }
 
         private void SetPrimaryKey()

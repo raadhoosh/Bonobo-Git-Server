@@ -104,6 +104,7 @@ namespace Bonobo.Git.Server.Test.UnitTests
                         [Id] Char(36) PRIMARY KEY NOT NULL,
                         [Name] VarChar(255) Not Null UNIQUE,
                         [Description] VarChar(255) Null,
+                        [CommandLinePath] VarChar(255) Null,
                         [Anonymous] Bit Not Null,
                         [AllowAnonymousPush] Integer NULL Default {0},
                         [LinksRegex] VarChar(255) Not Null,

@@ -24,6 +24,7 @@ namespace Bonobo.Git.Server.Models
         public string Name { get; set; }
         public string Group { get; set; }
         public string Description { get; set; }
+        public string CommandLinePath { get; set; }
         public bool AnonymousAccess { get; set; }
         public RepositoryPushMode AllowAnonymousPush { get; set; }
         public UserModel[] Users { get; set; }
@@ -110,6 +111,11 @@ namespace Bonobo.Git.Server.Models
         [Display(ResourceType = typeof(Resources), Name = "Repository_Detail_Description")]
         [StringLength(255, ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Validation_StringLength")]
         public string Description { get; set; }
+
+        [AllowHtml]
+        [Display(ResourceType = typeof(Resources), Name = "Repository_Detail_CommandLinePath")]
+        [StringLength(255, ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Validation_StringLength")]
+        public string CommandLinePath { get; set; }
 
 
         [Display(ResourceType = typeof(Resources), Name = "Repository_Detail_Users")]

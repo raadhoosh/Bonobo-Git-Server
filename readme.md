@@ -1,3 +1,8 @@
+
+I've added new parameter `CommandLinePath` to *Repository* table. I'm going to write some new functions to run `.cmd` and `.bat` scripts on local server when a new commit has pushed.
+
+
+
 Bonobo Git Server
 ==============================================
 

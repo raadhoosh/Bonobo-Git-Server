@@ -164,15 +164,18 @@ namespace Bonobo.Git.Server.Test.MembershipTests
             repo.AnonymousAccess = true;
             repo.AuditPushUser = true;
             repo.Description = "New desc";
+            repo.CommandLinePath = "";
 
             _repo.Update(repo);
 
-            var readBackRepo = _repo.GetRepository("SonOfRepo");
+            
+            RepositoryModel readBackRepo = _repo.GetRepository("SonOfRepo");
             Assert.AreEqual("SonOfRepo", readBackRepo.Name);
             Assert.AreEqual(repo.Group, readBackRepo.Group);
             Assert.AreEqual(repo.AnonymousAccess, readBackRepo.AnonymousAccess);
             Assert.AreEqual(repo.AuditPushUser, readBackRepo.AuditPushUser);
             Assert.AreEqual(repo.Description, readBackRepo.Description);
+            Assert.AreEqual(repo.CommandLinePath, readBackRepo.CommandLinePath);
         }
 
         [TestMethod]

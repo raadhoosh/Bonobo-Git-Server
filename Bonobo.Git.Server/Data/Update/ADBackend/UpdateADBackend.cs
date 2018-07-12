@@ -133,6 +133,7 @@ namespace Bonobo.Git.Server.Data.Update.ADBackendUpdate
                 newrepo.Name = repo.Name;
                 newrepo.Group = repo.Group;
                 newrepo.Description = repo.Description;
+                newrepo.CommandLinePath = repo.CommandLinePath;
                 newrepo.AnonymousAccess = repo.AnonymousAccess;
                 newrepo.AuditPushUser = repo.AuditPushUser;
                 newrepo.Logo = repo.Logo;

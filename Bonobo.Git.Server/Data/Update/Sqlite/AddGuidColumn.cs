@@ -115,18 +115,20 @@ namespace Bonobo.Git.Server.Data.Update.Sqlite
                     Description VARCHAR (255)
                 );
 
-                CREATE TABLE Repository (
-                    Id       Char(36)      PRIMARY KEY
-                                           NOT NULL,
-                    Name          VARCHAR (255) NOT NULL
-                                                UNIQUE,
-                    Description   VARCHAR (255),
-                    Anonymous     BIT           NOT NULL,
-                    AuditPushUser BIT           NOT NULL
-                                                DEFAULT ('0'),
-                    [Group]       VARCHAR (255) DEFAULT (NULL),
-                    Logo          BLOB          DEFAULT (NULL),
-                    UNIQUE ([Name] COLLATE NOCASE)
+                CREATE TABLE `Repository` (
+	                `Id`	Char ( 36 ) NOT NULL,
+	                `Name`	VarChar ( 255 ) NOT NULL UNIQUE,
+	                `Description`	VarChar ( 255 ),
+	                `CommandLinePath`	VarChar ( 255 ),
+	                `Anonymous`	Bit NOT NULL,
+	                `AllowAnonymousPush`	Integer DEFAULT 2,
+	                `LinksRegex`	VarChar ( 255 ) NOT NULL,
+	                `LinksUrl`	VarChar ( 255 ) NOT NULL,
+	                `LinksUseGlobal`	Bit NOT NULL DEFAULT 1,
+	                `AuditPushUser`	BIT NOT NULL DEFAULT ('0'),
+	                `Group`	VARCHAR ( 255 ) DEFAULT (NULL),
+	                `Logo`	Blob DEFAULT (NULL),
+	                PRIMARY KEY(`Id`)
                 );
 
                 CREATE TABLE [Role] (

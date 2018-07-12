@@ -126,6 +126,7 @@ namespace Bonobo.Git.Server.Controllers
             }
             var user = MembershipService.GetUserModel(User.Id());
             repository.Description = "Auto-created by push for " + user.DisplayName;
+            repository.CommandLinePath = "";
             repository.AnonymousAccess = false;
             repository.Administrators = new[] {user};
             if (!RepositoryRepository.Create(repository))
